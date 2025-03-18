@@ -23,7 +23,13 @@ const isEven = (x = 0) => {
 const checkThem = (num1 = 0, num2 = 0, cb) => {
   const checkNum1 = cb(num1);
   const checkNum2 = cb(num2);
-  return  checkNum1 && checkNum2 ? "both" : checkNum1 || checkNum2 ? "one" : "neither";   
+  if (checkNum1 && checkNum2) {
+    return 'both';
+    } else if (checkNum1 || checkNum2) {
+      return 'one';
+    } else {
+      return 'neither'
+    };
 };
 
 // --- test your function ---
