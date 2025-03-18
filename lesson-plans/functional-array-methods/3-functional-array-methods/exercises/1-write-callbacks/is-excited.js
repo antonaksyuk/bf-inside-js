@@ -5,5 +5,9 @@
  * @returns {boolean} is it excited?
  */
 export const isExcited = (str) => {
-  return str.includes('!');
+  if (str.includes('!')){
+    return true 
+  } else {
+    return false
+  };
 };

@@ -4,6 +4,10 @@
  * @param {number} num - the number
  * @returns {boolean} is the number even?
  */
-export const isEven = (num) => {
-  return num % 2 === 0;
+export const isEven = (number) => {
+  if (number % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 };
