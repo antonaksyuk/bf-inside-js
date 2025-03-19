@@ -15,15 +15,16 @@ const value2 = 200;
 const value3 = false;
 let path = '';
 
-if (_) {
+if (value1 === value2 && value3) {
   path = 'if';
-} else if (_) {
+} else if (value1 > value2 || value3) {
   path = 'else if 1';
-} else if (_) {
+} else if (value1 !== value2 || value2 !== value3) {
   path = 'else if 2';
 } else {
   path = 'else';
 }
+
 
 console.assert(path === 'else if 2', 'path should be "else if 2"');
 
