@@ -8,6 +8,16 @@ while (true) {
 
   /* -- BEGIN: validate input -- */
 
+  if (!userInput) {
+    continue;
+  }
+  if (
+    userInput.toLocaleLowerCase().includes('frog') ||
+    userInput.toLocaleUpperCase().includes('FROG')
+  ) {
+    break;
+  }
+
   /* -- END: validate input -- */
 }
 

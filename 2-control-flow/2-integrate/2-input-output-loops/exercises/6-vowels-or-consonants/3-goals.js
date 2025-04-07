@@ -14,7 +14,23 @@ while (true) {
   userInput = prompt('enter a word to filter:');
 
   /* -- BEGIN: validate input -- */
+if(userInput === '' || userInput === null){
+  alert('nope, enter something');
+  continue
+}
 
+  const whiteSpaceRegex = new RegExp('\\s', 'g');
+  if (whiteSpaceRegex.test(userInput)) {
+    alert("words can't have white space");
+    continue;
+  }
+
+  const confirmMessage =
+    'do you want to filter this word?\n\n' + '- "' + userInput + '"';
+
+  if (confirm(confirmMessage)) {
+    break;
+  }
   /* -- END: validate input -- */
 }
 
@@ -32,7 +48,12 @@ if (removeVowels) {
 
 let filteredInput = '';
 /* -- BEGIN: filter input -- */
-
+for (const character of userInput) {
+  const lowerCaseCharacter = character.toUpperCase();
+  if (!toRemove.includes(lowerCaseCharacter)) {
+    filteredInput += character;
+  }
+}
 /* -- END: filter input -- */
 
 const finalMessage = `"${userInput}" -> "${filteredInput}"`;
